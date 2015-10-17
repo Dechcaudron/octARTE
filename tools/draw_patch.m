@@ -8,7 +8,7 @@
 %   
 %	See also DRAW_LINK, DRAWROBOT3D, ANIMATE
 %
-%   Author: Arturo Gil. Universidad Miguel Hernández de Elche. 
+%   Author: Arturo Gil. Universidad Miguel Hernï¿½ndez de Elche. 
 %   email: arturo.gil@umh.es date:   05/02/2012
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 
@@ -28,6 +28,8 @@
 % 
 % You should have received a copy of the GNU Leser General Public License
 % along with ARTE.  If not, see <http://www.gnu.org/licenses/>.
+
+%This file has been modified by Hector Barreras Almarcha
 function draw_patch(F, V, C, transparent)
 
 if nargin==2
@@ -45,20 +47,22 @@ set(gca, 'drawmode', 'fast');
 %note: vertices should be expressed in m
 p = patch('faces', F, 'vertices', V);
 
-
-set(p, 'facec', 'flat');          
-%set(p, 'FaceVertexCData', C);       % Set the color (from file)
 set(p, 'FaceColor', C);
 
 if transparent
-    set(p, 'facealpha',.4)          % Draws the link with transparency
+    % The facealpha property is does not work correctly, as transparency is not yet implemented
+    % setting it to .4 will simply make it not render
+    printf('Warning: transparency is not correctly implemented so far. Setting it to 1 will cause the patches to not be rendered\n');
+    set(p, 'facealpha',.4)          % Draws the link with transparency    
 end
 
-set(p, 'EdgeColor','none');         
+%TEMPORARY - The light command is currently not supported in Octave
+%light;
+set(p, 'EdgeColor', 'k'); % This will make the 3d figure visible more easily
 
-light;                               
 %change material properties
-material( [0.5 0.1 0.01]);
+%TEMPORARY - The material function is currently not supported in octave
+%material( [0.5 0.1 0.01]);
 daspect([1 1 1])                    % Setting the aspect ratio
 
 xlabel('X (m)'),ylabel('Y (m)'),zlabel('Z (m)')
