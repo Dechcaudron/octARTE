@@ -13,7 +13,7 @@
 %
 %  See also STLWRITE, SURF2STL 
 %
-%   Author: Arturo Gil. Universidad Miguel Hernández de Elche. 
+%   Author: Arturo Gil. Universidad Miguel Hernï¿½ndez de Elche. 
 %   email: arturo.gil@umh.es date:   05/02/2012
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -61,7 +61,7 @@ while 1
     tline = fgets(file);
     
     if tline == -1
-        fprintf('EndOfFile found... ');
+        fprintf('EndOfFile found...\n');
         error = 1;        
         break;
     end

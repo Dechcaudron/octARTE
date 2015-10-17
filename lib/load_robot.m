@@ -98,7 +98,7 @@ if exist(full_name,'file')==2
     %default view
     axis(robot.axis);
 else %if there's no parameters.m file
-    fprintf('ERROR: No valid parameters.m file found. Please check the following directory')
+    fprintf('ERROR: No valid parameters.m file found. Please check the following directory: ')
     full_name
 end
 

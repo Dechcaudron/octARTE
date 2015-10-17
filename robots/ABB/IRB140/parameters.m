@@ -69,7 +69,6 @@ robot.linear_velmax = 2.5; %m/s
 %base reference system
 robot.T0 = eye(4);
 
-
 %INITIALIZATION OF VARIABLES REQUIRED FOR THE SIMULATION
 %position, velocity and acceleration
 robot=init_sim_variables(robot);
@@ -90,7 +89,6 @@ robot.graphical.axes_scale=1;
 robot.axis=[-0.5 0.75 -0.75 0.75 0 1.1];
 %read graphics files
 robot = read_graphics(robot);
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
